@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.action.extension" value="html" />
+
+	<!-- Configuration for the default package. -->
+	<package name="default" extends="struts-default" namespace="/">
+		<action name="index" class="controller.BookAction">
+			<result name="success">/index.jsp</result>
+		</action>
+		<action name="addnew" class="controller.BookAction" method="addNew">
+			<result name="success">/addnew.jsp</result>
+		</action>
+		<action name="process-addnew" class="controller.BookAction" method="processAddNew">
+			<result name="error">/addnew.jsp</result>
+			<result name="success">/index.jsp</result>
+		</action>
+		<action name="update" class="controller.BookAction" method="update">
+			<result name="success">/update.jsp</result>
+		</action>
+		<action name="process-update" class="controller.BookAction" method="processUpdate">
+			<result name="error">/update.jsp</result>
+			<result name="success">/index.jsp</result>
+		</action>
+		<action name="delete" class="controller.BookAction" method="delete">
+			<result name="success">/index.jsp</result>
+		</action>
+		<action name="search" class="controller.BookAction" method="search">
+			<result name="success">/search.jsp</result>
+		</action>
+		<action name="process-search" class="controller.BookAction" method="processSearch">
+			<result name="success">/search.jsp</result>
+		</action>
+	</package>
+</struts>

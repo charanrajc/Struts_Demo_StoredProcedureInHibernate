@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class catalog="DemoStruts" name="entities.Book" table="Book">
+		<id name="bookId" type="int">
+			<column name="BookID" />
+			<generator class="identity" />
+		</id>
+		<property generated="never" lazy="false" name="bookName"
+			type="string">
+			<column length="60" name="BookName" />
+		</property>
+		<property generated="never" lazy="false" name="bookPrice"
+			type="java.lang.Double">
+			<column name="BookPrice" precision="53" scale="0" />
+		</property>
+		<property generated="never" lazy="false" name="publish" type="timestamp">
+			<column length="23" name="Publish" />
+		</property>
+	</class>
+</hibernate-mapping>
